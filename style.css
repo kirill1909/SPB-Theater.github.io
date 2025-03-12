@@ -1,0 +1,683 @@
+body {
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    background-color: #222;
+    color: white;
+    position: sticky;
+}
+
+span {
+    color: wheat;
+}
+
+header {
+    background-color: transparent;
+}
+
+aside {
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+aside h2 {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: white;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+aside .line {
+    transform: rotate(90deg);
+    width: 50px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+aside img {
+    width: 30px;
+    height: 30px;
+    margin: 10px 0;
+    filter: invert(1);
+}
+
+nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    left: 120px;
+    position: absolute;
+    color: white;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: wheat;
+}
+
+.phone {
+  position: absolute;
+    list-style: none;
+    align-items: center;
+    color: white;
+    right: 80px;
+}
+
+.phone a {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.phone:not(.active):not(.btn) a:hover {
+   border-bottom: 2px solid wheat;
+}
+
+.hero {
+    background-image: url(./img/fon.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+}
+
+.hero-text {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+ .left {
+   padding-left: 7vw;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    font-size: 40px;
+}
+
+.title {
+    text-align: center;
+    font-size: 7vh;
+    margin-bottom: 20px;
+}
+
+
+.right {
+    margin-top: 80px;
+    margin-left: 7vw;
+    position: relative;
+    width: 50%;
+    text-align: center;
+}
+
+.images {
+    margin-left: 5vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.images img {
+    position: absolute;
+    transition: all 0.3s;
+}
+
+.images img:nth-child(1) {
+    z-index: 3;
+    left: 0;
+    top: 0;
+}
+
+.images img:nth-child(2) {
+    z-index: 2;
+    left: 20px;
+    top: 20px;
+}
+
+.text {
+    padding-top: 30px;
+    padding-left: 100px;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    width: 100%;
+    margin-top: 500px;
+}
+
+.left-arrow, .right-arrow {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    transition:all 0.3s ;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    color: wheat;
+}
+
+.left-arrow img {
+    margin-right: 10px;
+}
+
+.right-arrow img {
+    margin-left: 10px;
+    transform: rotate(180deg);
+}
+
+.left-arrow:hover,
+.right-arrow:hover{
+    transform: scale(1.1);
+}
+
+.btn {
+    font-size: 2vw;
+    background-color: #C99E71;
+    color: white;
+    width: 11vw;
+    height: 8vh;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: #c08647;
+}
+
+.about {
+    text-align: center;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.left-about {
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+ .about-title {
+    font-size: 1vw;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.center-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.gallery {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.gallery .item {
+    position: relative;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.gallery .item img {
+    width: 300px;
+    transition: all 0.3s;
+}
+
+.gallery .item:hover img {
+    filter: brightness(70%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 0.3s ease;
+}
+
+.item-text {
+    color: white;
+    font-size: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.top-left {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 16px;
+}
+
+.vertical-text {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    font-size: 16px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.search-icon {
+    width: 100px;
+    height: 100px;
+    background-image: url(./img/lupa.png);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.item:hover .item-text,
+.item:hover .vertical-text,
+.item:hover .top-left {
+    opacity: 0;
+}
+
+.item:hover .search-icon  {
+    opacity: 1;
+}
+
+.item:hover .search-icon img{
+    opacity: 1;
+}
+
+.info {
+    padding-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    padding-left: 30px;
+}
+
+.contacts {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+}
+
+.contacts .info {
+    font-size: 30px;
+}
+
+.contacts .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts .form input, 
+.contacts .form textarea {
+    background-color: #423e3e;
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.contacts .form textarea {
+    height: 80px;
+}
+
+.contacts .form button {
+    background-color: #C99E71;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.contacts .form button:hover {
+    background-color: #ce965a;
+}
+
+.contacts .form-text {
+    color: grey;
+    text-align: center;
+}
+
+.footer {
+    padding: 20px;
+    background-color: #222;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+    
+footer .line-footer {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+footer .footer-text {
+    color: grey;
+}
+
+@media screen and (max-width: 992px) and (min-width: 762px) {
+    .phone{
+        font-size: 13px;
+    }
+    
+    .phone a {
+        font-size: 20px;
+    }
+
+    .title{
+        font-size: 5vw;
+    }
+    .hero {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-text {
+        font-size: 21px;
+    }
+
+    .btn {
+        font-size: 2vw;
+    }
+
+    .about {
+        grid-template-columns: 100%;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .right{
+        display: none;
+    }
+
+    .btn{
+        font-size: 5vw;
+        width: 20vw;
+          height: 10vh;
+        margin-bottom: 10px;
+    }
+
+
+    .left-about {
+        width: auto;
+        height: auto;
+        font-size: 1vw;
+    }
+
+.about-text {
+    font-size: 2vw;
+}
+    .gallery {
+        gap: 15px;
+    }
+    .gallery .item img {
+        width: 250px;
+        height: 250px;
+    }
+    .gallery .item-text {
+        font-size: 18px;
+    }
+
+    .item-text {
+        font-size: 18px;
+    }
+
+    .contacts {
+        grid-template-columns: 100%;
+    }
+
+}
+
+
+@media screen and (max-width: 762px) and (min-width: 576px) {
+aside {
+    display: none;
+}
+    nav ul {
+        display: none;
+    }
+
+.phone a {
+    font-size: 15px;
+}
+
+    .title{
+        font-size: 5vw;
+    }
+    .hero {
+        width: 100%;
+    }
+
+    .hero-text {
+        font-size: 16px;
+        width: 100%;
+        height: auto;
+    }
+
+    .btn{
+        width: auto;
+        height: 45px;
+    }
+
+    .about {
+        grid-template-columns: 100%;
+    }
+
+    .left, .right {
+        width: 100%;
+        height: auto;
+    }
+
+    .right{
+        display: none;
+    }
+
+    .btn{
+        font-size: 5vw;
+        width: 150px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .left-about {
+        width: auto;
+        height: auto;
+        font-size: 1vw;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+
+    .right {
+        display: none;
+}
+.gallery {
+    flex-direction: column; 
+    align-items: center;
+}
+.gallery .item {
+    width: 100%;
+    max-width: 400px; 
+}
+.gallery .item img {
+    width: 100%;
+    height: auto;
+}
+.gallery .item-text {
+    font-size: 16px;
+}
+
+
+.item-text {
+    font-size: 18px;
+}
+
+.contacts {
+    grid-template-columns: 100%;
+}
+
+.form-text {
+    margin-left: 0;
+    text-align: center;
+}
+
+}
+
+
+
+@media screen and (max-width: 576px) {
+
+  aside {
+    display: none;    
+}
+    nav {
+        display: none;
+    }
+
+    .phone a {
+        font-size: 5px;
+    }
+
+    .title{
+        margin-top: 50px;
+        font-size: 10vw;
+    }
+    .hero {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero-text {
+        font-size:2vw ;
+        text-align: center;
+        margin-right: 5vw;
+    }
+    .about {
+        grid-template-columns: 100%;
+    }
+
+    .left {
+        margin: 0;
+        width: auto;
+        height: 100%;
+    }
+
+    .right{
+        display: none;
+    }
+
+    .btn{
+        font-size: 5vw;
+        width: 130px;
+        height: 45px;
+        margin-bottom: 10px;
+    }
+
+    .left-about {
+        width: auto;
+        height: auto;
+        font-size: 1vw;
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+
+.gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.gallery .item {
+    width: 90%; 
+    max-width: 300px;
+}
+.gallery .item img {
+    width: 100%;
+    height: 250px;
+}
+.gallery .item-text {
+    font-size: 14px;
+    padding: 3px 6px;
+}
+
+
+.contacts {
+    grid-template-columns: 100%;
+}
+
+.form-text {
+    margin-left: 0;
+    text-align: center;
+}
+
+}
